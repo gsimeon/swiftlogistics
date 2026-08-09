@@ -1,0 +1,6 @@
+{
+  "name": "LogiPulse Delivery & Fleet Live Tracker",
+  "description": "Real-time logistics platform connecting stores, drivers/riders, and clients with Google Maps live tracking, instant calls, automated notifications, secure escrow payments, and completed delivery logs.",
+  "requestFramePermissions": ["camera", "microphone", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
