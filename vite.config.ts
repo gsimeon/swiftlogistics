@@ -7,8 +7,11 @@ export default defineConfig(({ command }) => {
   const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
   const repositoryName = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.split('/')[1] : '';
   
-  let basePath = './'; // Use relative base path by default to prevent blank screen across Vercel and GitHub Pages
-  if (isGithubActions && repositoryName) {
+  let basePath = '/';
+  if (command === 'build') {
+    // Set base path to the GitHub Pages repository name to ensure correct resolution on deployment
+    basePath = '/swiftlogistics/';
+  } else if (isGithubActions && repositoryName) {
     basePath = `/${repositoryName}/`;
   } else if (process.env.VITE_BASE_PATH) {
     basePath = process.env.VITE_BASE_PATH;
